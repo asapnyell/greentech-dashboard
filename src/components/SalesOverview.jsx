@@ -1,4 +1,3 @@
-// src/components/SalesOverview.jsx
 import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -69,7 +68,7 @@ export function SalesOverview() {
           </CardHeader>
           <CardContent className="flex-1">
             <div className="rounded-xl border border-zinc-800/60 overflow-hidden">
-              <div className="grid grid-cols-12 gap-4 bg-zinc-900/80 p-4 text-xs font-medium text-zinc-500 uppercase tracking-wider border-b border-zinc-800/60 hidden md:grid">
+              <div className="hidden grid-cols-12 gap-4 bg-zinc-900/80 p-4 text-xs font-medium text-zinc-500 uppercase tracking-wider border-b border-zinc-800/60 md:grid">
                 <div className="col-span-2">ID Pedido</div>
                 <div className="col-span-3">Cliente</div>
                 <div className="col-span-3">Produto</div>

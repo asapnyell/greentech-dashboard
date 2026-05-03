@@ -1,4 +1,3 @@
-// src/components/GreenhousesList.jsx
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Sprout, Sun } from "lucide-react";

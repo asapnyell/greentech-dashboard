@@ -1,4 +1,3 @@
-// src/components/CultivationMetrics.jsx
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Leaf, ThermometerSun, Droplets, FlaskConical } from "lucide-react";
 import { motion } from "framer-motion";

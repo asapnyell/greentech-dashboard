@@ -1,4 +1,3 @@
-// src/components/AIPrediction.jsx
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Sparkles, Activity } from "lucide-react";
@@ -8,7 +7,7 @@ export function AIPrediction() {
     <motion.section 
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: false, amount: 0.5 }} // Aparece quando metade entra na tela
+      viewport={{ once: false, amount: 0.5 }} 
       transition={{ type: "spring", bounce: 0.4, duration: 0.8 }}
       whileHover={{ boxShadow: "0px 0px 30px rgba(16, 185, 129, 0.15)" }}
       className="mt-8 mb-16 relative overflow-hidden rounded-3xl border border-emerald-900/50 bg-zinc-900/40 backdrop-blur-xl p-8 cursor-default transition-shadow"
