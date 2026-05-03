@@ -5,36 +5,9 @@ import { Sprout, Sun } from "lucide-react";
 
 export function GreenhousesList() {
   const estufas = [
-    {
-      id: "Estufa Alpha",
-      strain: "Green Gelato",
-      tipo: "Híbrida",
-      fase: "Floração (Semana 6)",
-      luz: "12/12h",
-      status: "Excelente",
-      progresso: 75,
-      corBadge: "bg-purple-500/10 text-purple-400 border-purple-500/20"
-    },
-    {
-      id: "Sala de Vegetação",
-      strain: "Sour Diesel",
-      tipo: "Sativa",
-      fase: "Crescimento",
-      luz: "18/6h",
-      status: "Atenção (VPD Alto)",
-      progresso: 35,
-      corBadge: "bg-amber-500/10 text-amber-400 border-amber-500/20"
-    },
-    {
-      id: "Berçário 01",
-      strain: "Charlotte's Web",
-      tipo: "Alto CBD",
-      fase: "Enraizamento",
-      luz: "24/0h",
-      status: "Ideal",
-      progresso: 15,
-      corBadge: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
-    }
+    { id: "Estufa Alpha", strain: "Green Gelato", tipo: "Híbrida", fase: "Floração (Semana 6)", luz: "12/12h", status: "Excelente", progresso: 75, corBadge: "bg-purple-500/10 text-purple-400 border-purple-500/20" },
+    { id: "Sala de Vegetação", strain: "Sour Diesel", tipo: "Sativa", fase: "Crescimento", luz: "18/6h", status: "Atenção (VPD Alto)", progresso: 35, corBadge: "bg-amber-500/10 text-amber-400 border-amber-500/20" },
+    { id: "Berçário 01", strain: "Charlotte's Web", tipo: "Alto CBD", fase: "Enraizamento", luz: "24/0h", status: "Ideal", progresso: 15, corBadge: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20" }
   ];
 
   return (
@@ -44,10 +17,12 @@ export function GreenhousesList() {
         {estufas.map((estufa, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4, delay: index * 0.1 }}
-            className="flex flex-col md:flex-row items-start md:items-center justify-between p-5 rounded-2xl bg-zinc-900/40 border border-zinc-800 hover:border-zinc-700 transition-colors gap-6"
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: index * 0.1, type: "spring", stiffness: 100 }}
+            whileHover={{ scale: 1.01, backgroundColor: "rgba(24, 24, 27, 0.8)" }}
+            className="flex flex-col md:flex-row items-start md:items-center justify-between p-5 rounded-2xl bg-zinc-900/40 border border-zinc-800 cursor-pointer gap-6"
           >
             {/* Info Principal */}
             <div className="flex-1 space-y-1">
@@ -85,8 +60,9 @@ export function GreenhousesList() {
               <div className="h-2 w-full bg-zinc-950 rounded-full overflow-hidden border border-zinc-800">
                 <motion.div 
                   initial={{ width: 0 }}
-                  animate={{ width: `${estufa.progresso}%` }}
-                  transition={{ duration: 1, delay: 0.5 + (index * 0.2) }}
+                  whileInView={{ width: `${estufa.progresso}%` }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 1, delay: 0.2 }}
                   className={`h-full rounded-full ${estufa.status.includes("Atenção") ? 'bg-amber-500' : 'bg-emerald-500'}`}
                 />
               </div>

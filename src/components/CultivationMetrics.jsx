@@ -1,42 +1,14 @@
+// src/components/CultivationMetrics.jsx
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Leaf, ThermometerSun, Droplets, FlaskConical } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function CultivationMetrics() {
-  // Array de dados simulando o banco de dados (atendendo ao requisito de Props)
   const metrics = [
-    {
-      title: "Lotes Ativos",
-      value: "14 Estufas",
-      description: "+2 finalizam esta semana",
-      Icon: Leaf,
-      color: "text-emerald-500",
-      bg: "bg-emerald-500/10"
-    },
-    {
-      title: "Temperatura Média",
-      value: "24.5°C",
-      description: "Ideal para fase de floração",
-      Icon: ThermometerSun,
-      color: "text-amber-500",
-      bg: "bg-amber-500/10"
-    },
-    {
-      title: "Umidade do Ar",
-      value: "45%",
-      description: "Níveis perfeitamente estáveis",
-      Icon: Droplets,
-      color: "text-blue-500",
-      bg: "bg-blue-500/10"
-    },
-    {
-      title: "Testes de Laboratório",
-      value: "98% Pureza",
-      description: "Lote Delta-9 aprovado",
-      Icon: FlaskConical,
-      color: "text-purple-500",
-      bg: "bg-purple-500/10"
-    }
+    { title: "Lotes Ativos", value: "14 Estufas", description: "+2 finalizam esta semana", Icon: Leaf, color: "text-emerald-500", bg: "bg-emerald-500/10" },
+    { title: "Temperatura Média", value: "24.5°C", description: "Ideal para fase de floração", Icon: ThermometerSun, color: "text-amber-500", bg: "bg-amber-500/10" },
+    { title: "Umidade do Ar", value: "45%", description: "Níveis perfeitamente estáveis", Icon: Droplets, color: "text-blue-500", bg: "bg-blue-500/10" },
+    { title: "Testes de Laboratório", value: "98% Pureza", description: "Lote Delta-9 aprovado", Icon: FlaskConical, color: "text-purple-500", bg: "bg-purple-500/10" }
   ];
 
   return (
@@ -44,11 +16,14 @@ export function CultivationMetrics() {
       {metrics.map((metric, index) => (
         <motion.div
           key={index}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.2 }} // Anima toda vez que entra na tela
           transition={{ duration: 0.4, delay: index * 0.1 }}
+          whileHover={{ y: -8, scale: 1.02 }} // Animação de hover (flutuar)
+          className="h-full cursor-pointer"
         >
-          <Card className="bg-zinc-900/50 border-zinc-800 backdrop-blur-sm hover:border-zinc-700 transition-colors h-full">
+          <Card className="bg-zinc-900/50 border-zinc-800 backdrop-blur-sm transition-colors h-full shadow-lg hover:shadow-emerald-500/10 hover:border-emerald-500/30">
             <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
               <CardTitle className="text-sm font-medium text-zinc-400">
                 {metric.title}
