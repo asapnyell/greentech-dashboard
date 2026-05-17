@@ -21,7 +21,7 @@ O projeto foi desenvolvido como requisito acadêmico para demonstrar a aplicaç�
 
 1. Clone o repositório:
 ```bash
-git clone [https://github.com/asapnyell/greentech-dashboard.git]
+git clone https://github.com/asapnyell/greentech-dashboard.git
 ```
 
 2. Acesse a pasta do projeto:
